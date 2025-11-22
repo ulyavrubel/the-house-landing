@@ -11,7 +11,7 @@
 		<main>
 			<section id="hero" class="hero">
 				<div class="flex-column hero-container">
-					<nav class="nav flex">
+					<nav id="nav" class="nav flex">
 						<ul class="flex gap-2">
 							<li>
 								<a href="#description">Описание</a>
@@ -26,15 +26,15 @@
 								<a href="#location">Расположение</a>
 							</li>
 						</ul>
+						<div class="hero-content-buttons flex gap-1">
+							<button onclick="callPhone()" class="button hero-content-button">
+								+7 (999) 999-99-99
+							</button>
+							<button class="button button-secondary hero-content-button">
+								Заказать звонок
+							</button>
+						</div>
 					</nav>
-					<div class="hero-content-buttons flex-column gap-1">
-						<button class="button hero-content-button">
-							+7 (999) 999-99-99
-						</button>
-						<button class="button button-secondary hero-content-button">
-							Заказать звонок
-						</button>
-					</div>
 					<div class="hero-content-container">
 						<h1 class="hero-title">
 							Продается <br class="hero-title-br">

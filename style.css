@@ -240,13 +240,45 @@ button:hover:not(:disabled),
 }
 
 .hero-container {
-	justify-content: space-between;
+	justify-content: flex-end;
 	height: 100%;
 }
 
 nav {
 	justify-content: center;
 	padding: 1.5rem 3rem 0 3rem;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* Desktop fixed navigation */
+@media (min-width: 769px) {
+	.nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 1000;
+		background-color: transparent;
+		padding: 1.5rem 3rem;
+	}
+
+	/* When scrolled - semi-transparent with text color */
+	.nav.scrolled {
+		background-color: rgba(255, 255, 255, 0.65);
+		backdrop-filter: blur(10px);
+	}
+
+	.nav.scrolled a {
+		color: var(--text-color);
+	}
+
+	/* When at top - fully transparent with white text */
+	.nav:not(.scrolled) a {
+		color: var(--text-white);
+	}
 }
 
 .footer nav {
@@ -255,7 +287,6 @@ nav {
 
 .hero-content-buttons {
 	position: absolute;
-	top: 1.5rem;
 	right: 3rem;
 }
 

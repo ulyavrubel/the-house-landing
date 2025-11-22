@@ -1,5 +1,33 @@
 document.getElementById("footer-year").textContent = new Date().getFullYear();
 
+// Navigation scroll behavior
+function handleNavScroll() {
+	const nav = document.getElementById("nav");
+	if (!nav) return;
+
+	if (window.innerWidth >= 769) {
+		if (window.scrollY > 0) {
+			nav.classList.add("scrolled");
+		} else {
+			nav.classList.remove("scrolled");
+		}
+	} else {
+		nav.classList.remove("scrolled");
+	}
+}
+
+const nav = document.getElementById("nav");
+if (nav) {
+	// Initial check
+	handleNavScroll();
+
+	// Listen to scroll events
+	window.addEventListener("scroll", handleNavScroll);
+
+	// Handle window resize to re-check on mobile/desktop switch
+	window.addEventListener("resize", handleNavScroll);
+}
+
 // Floating Action Button functionality
 const fabMain = document.getElementById("fabMain");
 const fabMenu = document.getElementById("fabMenu");
@@ -25,9 +53,13 @@ function closeFabMenu() {
 // Event listeners
 fabMain.addEventListener("click", toggleFabMenu);
 
+function callPhone() {
+	window.location.href = `tel:${phoneNumber}`;
+}
+
 // Phone call
 fabPhone.addEventListener("click", () => {
-	window.location.href = `tel:${phoneNumber}`;
+	callPhone();
 	closeFabMenu();
 });
 
