@@ -507,7 +507,7 @@ nav {
 	z-index: 1000;
 	display: none;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: center;
 	gap: 1rem;
 }
 
@@ -542,7 +542,7 @@ nav {
 	display: none;
 }
 
-.fab-menu.active ~ .fab-main .fab-icon-message {
+.fab-menu.active ~ .fab-main .fab-icon-phone {
 	display: none;
 }
 
