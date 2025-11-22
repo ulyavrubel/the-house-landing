@@ -742,7 +742,13 @@ nav {
 		border-right: none;
 	}
 
-	.description-grid-item:nth-child(n + 7) {
+	.description-grid-item:nth-child(5),
+	.description-grid-item:nth-child(6) {
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	.description-grid-item:nth-child(7),
+	.description-grid-item:nth-child(8) {
 		border-bottom: none;
 	}
 
