@@ -538,6 +538,18 @@ nav {
 	transform: scale(0.95);
 }
 
+.fab-icon-close {
+	display: none;
+}
+
+.fab-menu.active ~ .fab-main .fab-icon-message {
+	display: none;
+}
+
+.fab-menu.active ~ .fab-main .fab-icon-close {
+	display: block;
+}
+
 .fab-menu {
 	display: flex;
 	flex-direction: column;
@@ -602,14 +614,6 @@ nav {
 
 #fabTelegram:hover {
 	background-color: #006699;
-}
-
-.fab-close {
-	background-color: #ef4444;
-}
-
-.fab-close:hover {
-	background-color: #dc2626;
 }
 
 .fab-item svg {

@@ -3,7 +3,6 @@ document.getElementById("footer-year").textContent = new Date().getFullYear();
 // Floating Action Button functionality
 const fabMain = document.getElementById("fabMain");
 const fabMenu = document.getElementById("fabMenu");
-const fabClose = document.getElementById("fabClose");
 const fabPhone = document.getElementById("fabPhone");
 const fabWhatsApp = document.getElementById("fabWhatsApp");
 const fabTelegram = document.getElementById("fabTelegram");
@@ -25,7 +24,6 @@ function closeFabMenu() {
 
 // Event listeners
 fabMain.addEventListener("click", toggleFabMenu);
-fabClose.addEventListener("click", closeFabMenu);
 
 // Phone call
 fabPhone.addEventListener("click", () => {
