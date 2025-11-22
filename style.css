@@ -505,7 +505,7 @@ nav {
 	bottom: 2rem;
 	right: 2rem;
 	z-index: 1000;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: flex-end;
 	gap: 1rem;
@@ -642,17 +642,7 @@ nav {
 	}
 
 	.hero-content-buttons {
-		position: static;
-		width: 100%;
-		padding: 1rem;
-		align-items: stretch;
-	}
-
-	.hero-content-buttons .button {
-		width: 100%;
-		font-size: 0.8rem;
-		padding: 0.75rem;
-		height: auto;
+		display: none;
 	}
 
 	.hero-title {
@@ -854,6 +844,11 @@ nav {
 		height: auto;
 		min-height: 2.5rem;
 	}
+
+	/* Floating Action Button Mobile */
+	.fab-container {
+		display: flex;
+	}
 }
 
 /* Small Mobile Devices */
@@ -907,7 +902,6 @@ nav {
 		padding: 2rem 1rem;
 	}
 
-	/* Floating Action Button Mobile */
 	.fab-container {
 		bottom: 1.5rem;
 		right: 1.5rem;
