@@ -70,9 +70,13 @@ ul li {
 }
 
 a:not([class]) {
-	/* text-decoration-skip-ink: auto; */
 	text-decoration: none;
 	color: currentColor;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 /* shadcn/ui Button Styles */
@@ -198,7 +202,7 @@ button:hover:not(:disabled),
 
 .flex {
 	display: flex;
-	/* justify-content: center; */
+
 	align-items: center;
 }
 
@@ -238,7 +242,6 @@ button:hover:not(:disabled),
 .hero-container {
 	justify-content: space-between;
 	height: 100%;
-	/* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 nav {
@@ -271,6 +274,10 @@ nav {
 	text-align: center;
 }
 
+.hero-title-br {
+	display: none;
+}
+
 .hero-content {
 	padding: 0 3rem 1.5rem 3rem;
 	justify-content: space-between;
@@ -298,6 +305,8 @@ nav {
 
 .section-image {
 	border-radius: 30px;
+	max-width: 100%;
+	height: auto;
 }
 
 .section-text {
@@ -413,7 +422,6 @@ nav {
 }
 
 .plan {
-	/* padding: 8rem 0 0 0; */
 	max-width: 1500px;
 	margin: 0 auto;
 }
@@ -454,7 +462,6 @@ nav {
 }
 
 .pdf-text {
-	/* font-size: 0.9rem; */
 	font-weight: 400;
 	text-align: center;
 }
@@ -475,9 +482,7 @@ nav {
 }
 
 .contacts-container {
-	/* justify-content: center; */
 	align-items: center;
-	/* height: 100vh; */
 }
 
 .footer-container {
@@ -490,4 +495,471 @@ nav {
 .footer-logo {
 	width: 50px;
 	height: 50px;
+}
+
+.footer-logo-white {
+	width: 50px;
+	height: 50px;
+	display: none;
+}
+
+/* Floating Action Button */
+.fab-container {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 1000;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.fab-main {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background-color: hsl(var(--primary));
+	color: hsl(var(--primary-foreground));
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: all 0.3s ease;
+	position: relative;
+	z-index: 1001;
+}
+
+.fab-main:hover {
+	background-color: hsl(var(--primary) / 0.9);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+	transform: scale(1.05);
+}
+
+.fab-main:active {
+	transform: scale(0.95);
+}
+
+.fab-icon-close {
+	display: none;
+}
+
+.fab-menu.active ~ .fab-main .fab-icon-phone {
+	display: none;
+}
+
+.fab-menu.active ~ .fab-main .fab-icon-close {
+	display: block;
+}
+
+.fab-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(20px);
+	transition: all 0.3s ease;
+	pointer-events: none;
+}
+
+.fab-menu.active {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	pointer-events: all;
+}
+
+.fab-item {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	transition: all 0.3s ease;
+	color: white;
+	position: relative;
+}
+
+.fab-item:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fab-item:active {
+	transform: scale(0.95);
+}
+
+#fabPhone {
+	background-color: #10b981;
+}
+
+#fabPhone:hover {
+	background-color: #059669;
+}
+
+#fabWhatsApp {
+	background-color: #25d366;
+}
+
+#fabWhatsApp:hover {
+	background-color: #128c7e;
+}
+
+#fabTelegram {
+	background-color: #0088cc;
+}
+
+#fabTelegram:hover {
+	background-color: #006699;
+}
+
+.fab-item svg {
+	width: 24px;
+	height: 24px;
+	transform: scale(1.5);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+	/* Hero Section */
+	.hero {
+		min-height: 100svh;
+		height: auto;
+	}
+
+	.hero-container {
+		min-height: 100svh;
+	}
+
+	nav {
+		padding: 1rem 1rem 0 1rem;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.hero a {
+		font-size: 0.9rem;
+	}
+
+	.hero-content-buttons {
+		display: none;
+	}
+
+	.hero-title {
+		font-size: 1.5rem;
+		padding: 0 1rem;
+		height: 50svh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-title-br {
+		display: block;
+	}
+
+	.hero-content-container {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.hero-content {
+		flex-direction: column;
+		padding: 3rem 1rem;
+		gap: 0.5rem;
+		align-items: flex-start;
+	}
+
+	.hero-content-item {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.hero-content-item p {
+		font-size: 1.1rem;
+	}
+
+	.hero-content-item h2 {
+		font-size: 1.1rem;
+	}
+
+	/* Sections */
+	.section {
+		padding: 3rem 1.5rem 0 1.5rem;
+	}
+
+	.section,
+	.gallery {
+		padding: 3rem 1.5rem 3rem 1.5rem;
+	}
+
+	.section-title {
+		font-size: 1.1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.section-text {
+		font-size: 1rem;
+	}
+
+	/* Description Section */
+	.description > .flex {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.description-image,
+	.location-image {
+		width: 100%;
+	}
+
+	.description-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		padding: 2rem 0 0 0;
+		gap: 0;
+	}
+
+	.description-grid-item:nth-child(2),
+	.description-grid-item:nth-child(4),
+	.description-grid-item:nth-child(6),
+	.description-grid-item:nth-child(8) {
+		border-right: none;
+	}
+
+	.description-grid-item:nth-child(5),
+	.description-grid-item:nth-child(6) {
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	.description-grid-item:nth-child(7),
+	.description-grid-item:nth-child(8) {
+		border-bottom: none;
+	}
+
+	.description-grid-item {
+		padding: 1rem 0.5rem;
+	}
+
+	.description-grid-item-text {
+		font-size: 0.8rem;
+	}
+
+	/* Gallery Section */
+	.gallery-title {
+		padding-bottom: 2rem;
+	}
+
+	.gallery-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.gallery-container img {
+		width: 100%;
+		height: auto;
+		max-height: 400px;
+		object-fit: cover;
+	}
+
+	.gallery-image-1,
+	.gallery-image-2,
+	.gallery-image-3,
+	.gallery-image-4,
+	.gallery-image-5,
+	.gallery-image-6 {
+		grid-area: auto;
+	}
+
+	/* Plans Section */
+	.section#plans {
+		padding: 3rem 1.5rem 0 1.5rem;
+	}
+
+	.plan-image {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	/* Location Section */
+	.location-container {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.location-content {
+		width: 100%;
+	}
+
+	.location-content .button {
+		width: 100%;
+		text-align: center;
+	}
+
+	/* PDF Section */
+	.section#pdf {
+		padding: 0 1.5rem 3rem 1.5rem;
+	}
+
+	.pdf-container {
+		width: 100%;
+		max-width: 100%;
+		padding: 2rem 1.5rem;
+	}
+
+	.pdf-text {
+		font-size: 0.9rem;
+	}
+
+	/* Contacts Section */
+	.section.contacts {
+		padding: 3rem 1.5rem;
+	}
+
+	.contacts-container .flex {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.contacts-container .button {
+		width: 100%;
+	}
+
+	.contacts-title {
+		font-size: 1rem;
+		text-align: center;
+	}
+
+	/* Footer */
+	.footer-container {
+		padding: 2rem 1.5rem;
+		background-color: var(--text-color);
+		color: var(--text-white);
+	}
+
+	.footer-logo-white {
+		display: block;
+	}
+
+	.footer-logo {
+		display: none;
+	}
+
+	.footer-nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.footer-nav a {
+		font-size: 0.9rem;
+	}
+
+	/* General adjustments */
+	.gap-4 {
+		gap: 2rem;
+	}
+
+	.gap-2 {
+		gap: 1.5rem;
+	}
+
+	.gap-1 {
+		gap: 0.75rem;
+	}
+
+	.button {
+		font-size: 0.875rem;
+		padding: 0.75rem 1rem;
+		height: auto;
+		min-height: 2.5rem;
+	}
+
+	.contacts {
+		display: none;
+	}
+
+	/* Floating Action Button Mobile */
+	.fab-container {
+		display: flex;
+	}
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+	.section-title {
+		font-size: 1rem;
+	}
+
+	.section-text {
+		font-size: 0.9rem;
+	}
+
+	.hero-content-item p {
+		font-size: 0.85rem;
+	}
+
+	.hero-content-item h2 {
+		font-size: 0.85rem;
+	}
+
+	.description-grid-item-text {
+		font-size: 0.75rem;
+	}
+
+	nav ul {
+		gap: 0.5rem;
+	}
+
+	.hero a {
+		font-size: 0.8rem;
+	}
+
+	.pdf-container {
+		padding: 1.5rem 1rem;
+	}
+
+	.section {
+		padding: 2rem 1rem 0 1rem;
+	}
+
+	.section,
+	.gallery {
+		padding: 2rem 1rem 2rem 1rem;
+	}
+
+	.section.contacts {
+		padding: 2rem 1rem;
+	}
+
+	.fab-container {
+		bottom: 1.5rem;
+		right: 1.5rem;
+	}
+
+	.fab-main {
+		width: 52px;
+		height: 52px;
+	}
+
+	.fab-item {
+		width: 44px;
+		height: 44px;
+	}
 }
