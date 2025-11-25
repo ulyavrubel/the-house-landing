@@ -82,11 +82,11 @@ fabWhatsApp.addEventListener("click", () => {
 	closeFabMenu();
 });
 
-// Telegram
-fabTelegram.addEventListener("click", () => {
-	openTelegram();
-	closeFabMenu();
-});
+// // Telegram
+// fabTelegram.addEventListener("click", () => {
+// 	openTelegram();
+// 	closeFabMenu();
+// });
 
 // Close menu when clicking outside
 const fabContainer = document.querySelector(".fab-container");
