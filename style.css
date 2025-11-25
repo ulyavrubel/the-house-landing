@@ -252,8 +252,14 @@ nav {
 		color 0.3s ease;
 }
 
+@media (max-width: 1340px) {
+	.nav-item-visualization {
+		display: none;
+	}
+}
+
 /* Desktop fixed navigation */
-@media (min-width: 769px) {
+@media (min-width: 1200px) {
 	.nav {
 		position: fixed;
 		top: 0;
@@ -303,6 +309,14 @@ nav {
 	padding: 1.5rem 0;
 	font-weight: 500;
 	text-align: center;
+}
+
+.hero-title-container {
+	justify-content: center;
+}
+
+.hero-squarell {
+	width: 80px;
 }
 
 .hero-title-br {
@@ -464,6 +478,19 @@ nav {
 	display: block;
 }
 
+.visualization-image {
+	max-height: 90svh;
+	object-fit: contain;
+}
+
+.location-title-mobile {
+	display: none;
+}
+
+.location-title-desktop {
+	display: block;
+}
+
 .location-container {
 	max-width: 1500px;
 	margin: 0 auto;
@@ -514,6 +541,14 @@ nav {
 
 .contacts-container {
 	align-items: center;
+}
+
+.contacts-social-buttons {
+	justify-content: center;
+}
+
+.button-social-text {
+	margin-left: 0.5rem;
 }
 
 .footer-container {
@@ -635,19 +670,23 @@ nav {
 	background-color: #059669;
 }
 
-#fabWhatsApp {
+#fabWhatsApp,
+#navWhatsApp {
 	background-color: #25d366;
 }
 
-#fabWhatsApp:hover {
+#fabWhatsApp:hover,
+#navWhatsApp:hover {
 	background-color: #128c7e;
 }
 
-#fabTelegram {
+#fabTelegram,
+#navTelegram {
 	background-color: #0088cc;
 }
 
-#fabTelegram:hover {
+#fabTelegram:hover,
+#navTelegram:hover {
 	background-color: #006699;
 }
 
@@ -658,7 +697,7 @@ nav {
 }
 
 /* Mobile Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	/* Hero Section */
 	.hero {
 		min-height: 100svh;
@@ -681,6 +720,10 @@ nav {
 		gap: 0.75rem;
 	}
 
+	.nav-item-visualization {
+		display: block;
+	}
+
 	.hero a {
 		font-size: 0.9rem;
 	}
@@ -696,6 +739,10 @@ nav {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.hero-squarell {
+		display: none;
 	}
 
 	.hero-title-br {
@@ -757,6 +804,7 @@ nav {
 	.description-image,
 	.location-image {
 		width: 100%;
+		max-width: 600px;
 	}
 
 	.description-grid {
@@ -829,6 +877,14 @@ nav {
 	}
 
 	/* Location Section */
+	.location-title-mobile {
+		display: block;
+	}
+
+	.location-title-desktop {
+		display: none;
+	}
+
 	.location-container {
 		flex-direction: column;
 		gap: 2rem;
@@ -863,11 +919,6 @@ nav {
 		padding: 3rem 1.5rem;
 	}
 
-	.contacts-container .flex {
-		flex-direction: column;
-		width: 100%;
-	}
-
 	.contacts-container .button {
 		width: 100%;
 	}
@@ -880,16 +931,6 @@ nav {
 	/* Footer */
 	.footer-container {
 		padding: 2rem 1.5rem;
-		background-color: var(--text-color);
-		color: var(--text-white);
-	}
-
-	.footer-logo-white {
-		display: block;
-	}
-
-	.footer-logo {
-		display: none;
 	}
 
 	.footer-nav ul {
@@ -922,10 +963,6 @@ nav {
 		min-height: 2.5rem;
 	}
 
-	.contacts {
-		display: none;
-	}
-
 	/* Floating Action Button Mobile */
 	.fab-container {
 		display: flex;
@@ -956,6 +993,10 @@ nav {
 
 	nav ul {
 		gap: 0.5rem;
+	}
+
+	.nav-item-visualization {
+		display: none;
 	}
 
 	.hero a {

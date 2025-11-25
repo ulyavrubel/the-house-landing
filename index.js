@@ -36,8 +36,8 @@ const fabWhatsApp = document.getElementById("fabWhatsApp");
 const fabTelegram = document.getElementById("fabTelegram");
 
 // Phone number (update with actual number)
-const phoneNumber = "+79999999999"; // Format: +7 (999) 999-99-99
-const whatsappNumber = "79999999999"; // Format: 79999999999 (without +)
+const phoneNumber = "+79850861878"; // Format: +7 (999) 999-99-99
+const whatsappNumber = "79850861878"; // Format: 79999999999 (without +)
 const telegramUsername = "your_telegram_username"; // Update with your Telegram username
 
 // Toggle menu
@@ -57,6 +57,19 @@ function callPhone() {
 	window.location.href = `tel:${phoneNumber}`;
 }
 
+function openWhatsApp() {
+	const message = encodeURIComponent(
+		"Здравствуйте! Я хочу забронировать просмотр дома на Николиной горе.",
+	);
+	window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+}
+
+// https://wa.me/79850861878?text="Здравствуйте! Я хочу забронировать просмотр дома на Николиной горе."
+
+function openTelegram() {
+	window.open(`https://t.me/${telegramUsername}`, "_blank");
+}
+
 // Phone call
 fabPhone.addEventListener("click", () => {
 	callPhone();
@@ -65,16 +78,13 @@ fabPhone.addEventListener("click", () => {
 
 // WhatsApp
 fabWhatsApp.addEventListener("click", () => {
-	const message = encodeURIComponent(
-		"Здравствуйте! Я хочу узнать больше о доме на Николиной горе.",
-	);
-	window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+	openWhatsApp();
 	closeFabMenu();
 });
 
 // Telegram
 fabTelegram.addEventListener("click", () => {
-	window.open(`https://t.me/${telegramUsername}`, "_blank");
+	openTelegram();
 	closeFabMenu();
 });
 
@@ -88,3 +98,8 @@ document.addEventListener("click", (e) => {
 		closeFabMenu();
 	}
 });
+
+// biome-ignore lint/correctness/noUnusedVariables: <used in html>
+function downloadPDF() {
+	window.open("./assets/documents/presentation.pdf", "_blank");
+}
