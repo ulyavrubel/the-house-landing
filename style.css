@@ -1,4 +1,5 @@
 /* Font Face Declarations */
+/** biome-ignore-all lint/suspicious/noDuplicateProperties: <explanation> */
 @font-face {
 	font-family: "Playfair Display";
 	src: url("./assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf")
@@ -86,6 +87,8 @@ button,
 	align-items: center;
 	justify-content: center;
 	white-space: nowrap;
+	/* Fallback for older browsers */
+	border-radius: 6px;
 	border-radius: calc(var(--radius) - 2px);
 	font-size: 0.875rem;
 	font-weight: 500;
@@ -98,8 +101,25 @@ button,
 	line-height: 1;
 }
 
+/* Focus fallback for browsers without :focus-visible support */
+button:focus,
+.button:focus {
+	/* Fallback color */
+	outline: 2px solid #020817;
+	outline: 2px solid hsl(var(--ring));
+	outline-offset: 2px;
+}
+
+/* Remove focus outline when not keyboard-focused (for browsers that support :focus-visible) */
+button:focus:not(:focus-visible),
+.button:focus:not(:focus-visible) {
+	outline: none;
+}
+
 button:focus-visible,
 .button:focus-visible {
+	/* Fallback color */
+	outline: 2px solid #020817;
 	outline: 2px solid hsl(var(--ring));
 	outline-offset: 2px;
 }
@@ -114,6 +134,9 @@ button:disabled,
 button,
 .button,
 .button-default {
+	/* Fallback colors for older browsers */
+	background-color: #0f172a;
+	color: #f8fafc;
 	background-color: hsl(var(--primary));
 	color: hsl(var(--primary-foreground));
 }
@@ -121,48 +144,71 @@ button,
 button:hover:not(:disabled),
 .button:hover:not(:disabled),
 .button-default:hover:not(:disabled) {
+	/* Fallback color (90% opacity approximation) */
+	background-color: #1e293b;
 	background-color: hsl(var(--primary) / 0.9);
 }
 
 /* Destructive variant */
 .button-destructive {
+	/* Fallback colors */
+	background-color: #ef4444;
+	color: #f8fafc;
 	background-color: hsl(var(--destructive));
 	color: hsl(var(--destructive-foreground));
 }
 
 .button-destructive:hover:not(:disabled) {
+	/* Fallback color (90% opacity approximation) */
+	background-color: #dc2626;
 	background-color: hsl(var(--destructive) / 0.9);
 }
 
 /* Outline variant */
 .button-outline {
+	/* Fallback colors */
+	border: 1px solid #e2e8f0;
+	color: #020817;
 	border: 1px solid hsl(var(--border));
 	background-color: transparent;
 	color: hsl(var(--foreground));
 }
 
 .button-outline:hover:not(:disabled) {
+	/* Fallback colors */
+	background-color: #f1f5f9;
+	color: #0f172a;
 	background-color: hsl(var(--accent));
 	color: hsl(var(--accent-foreground));
 }
 
 /* Secondary variant */
 .button-secondary {
+	/* Fallback colors */
+	background-color: #f1f5f9;
+	color: #0f172a;
 	background-color: hsl(var(--secondary));
 	color: hsl(var(--secondary-foreground));
 }
 
 .button-secondary:hover:not(:disabled) {
+	/* Fallback color (80% opacity approximation) */
+	background-color: #e2e8f0;
 	background-color: hsl(var(--secondary) / 0.8);
 }
 
 /* Ghost variant */
 .button-ghost {
 	background-color: transparent;
+	/* Fallback color */
+	color: #020817;
 	color: hsl(var(--foreground));
 }
 
 .button-ghost:hover:not(:disabled) {
+	/* Fallback colors */
+	background-color: #f1f5f9;
+	color: #0f172a;
 	background-color: hsl(var(--accent));
 	color: hsl(var(--accent-foreground));
 }
@@ -170,6 +216,8 @@ button:hover:not(:disabled),
 /* Link variant */
 .button-link {
 	background-color: transparent;
+	/* Fallback color */
+	color: #0f172a;
 	color: hsl(var(--primary));
 	text-decoration: underline;
 	text-underline-offset: 4px;
@@ -343,6 +391,7 @@ nav {
 	border-radius: 6px;
 	line-height: 1;
 	color: var(--text-color);
+	white-space: nowrap;
 }
 
 .section {
