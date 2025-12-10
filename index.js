@@ -38,7 +38,7 @@ const fabTelegram = document.getElementById("fabTelegram");
 // Phone number (update with actual number)
 const phoneNumber = "+79850861878"; // Format: +7 (999) 999-99-99
 const whatsappNumber = "79850861878"; // Format: 79999999999 (without +)
-const telegramUsername = "your_telegram_username"; // Update with your Telegram username
+const telegramUsername = "dom_na_nikolinoy_gore"; // Update with your Telegram username
 
 // Toggle menu
 function toggleFabMenu() {
@@ -82,11 +82,11 @@ fabWhatsApp.addEventListener("click", () => {
 	closeFabMenu();
 });
 
-// // Telegram
-// fabTelegram.addEventListener("click", () => {
-// 	openTelegram();
-// 	closeFabMenu();
-// });
+// Telegram
+fabTelegram.addEventListener("click", () => {
+	openTelegram();
+	closeFabMenu();
+});
 
 // Close menu when clicking outside
 const fabContainer = document.querySelector(".fab-container");

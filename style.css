@@ -639,10 +639,9 @@ nav {
 }
 
 .fab-main {
-	width: 56px;
-	height: 56px;
+	width: 72px;
+	height: 72px;
 	border-radius: 50%;
-	background-color: hsl(var(--primary));
 	color: hsl(var(--primary-foreground));
 	border: none;
 	cursor: pointer;
@@ -656,7 +655,6 @@ nav {
 }
 
 .fab-main:hover {
-	background-color: hsl(var(--primary) / 0.9);
 	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 	transform: scale(1.05);
 }
@@ -1083,8 +1081,8 @@ nav {
 	}
 
 	.fab-main {
-		width: 52px;
-		height: 52px;
+		width: 62px;
+		height: 62px;
 	}
 
 	.fab-item {
